@@ -984,18 +984,21 @@ if (this._buffer.length &#x3e; 0) {
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        // Create message
-        var message = new Buffer(data);
 
-        if (that._debug) {
-            console.warn(message.toString());
-        }
+if (_tags) {
+    text += &#x27;|#&#x27; + Object.keys(_tags).map(function (tag) {
+        return tag + &#x27;:&#x27; + _tags[tag];
+    }).join(&#x27;,&#x27;);
+}
 
-        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
-    });
-};
+this._socket.<span class="apidocCodeKeywordSpan">send</span>(text);
+}
 
-module.exports = EphemeralSocket;
+/*
+ * Get a &#x22;child&#x22; client with a sub-prefix.
+ */
+StatsDClient.prototype.getChildClient = function (extraPrefix) {
+return new DatadogClient({
 ...</pre></li>
     </ul>
 
@@ -1294,18 +1297,21 @@ if (this._buffer.length &#x3e; 0) {
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        // Create message
-        var message = new Buffer(data);
 
-        if (that._debug) {
-            console.warn(message.toString());
-        }
+if (_tags) {
+    text += &#x27;|#&#x27; + Object.keys(_tags).map(function (tag) {
+        return tag + &#x27;:&#x27; + _tags[tag];
+    }).join(&#x27;,&#x27;);
+}
 
-        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
-    });
-};
+this._socket.<span class="apidocCodeKeywordSpan">send</span>(text);
+}
 
-module.exports = EphemeralSocket;
+/*
+ * Get a &#x22;child&#x22; client with a sub-prefix.
+ */
+StatsDClient.prototype.getChildClient = function (extraPrefix) {
+return new DatadogClient({
 ...</pre></li>
     </ul>
 
@@ -1713,18 +1719,21 @@ if (this._buffer.length &#x3e; 0) {
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        // Create message
-        var message = new Buffer(data);
 
-        if (that._debug) {
-            console.warn(message.toString());
-        }
+if (_tags) {
+    text += &#x27;|#&#x27; + Object.keys(_tags).map(function (tag) {
+        return tag + &#x27;:&#x27; + _tags[tag];
+    }).join(&#x27;,&#x27;);
+}
 
-        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
-    });
-};
+this._socket.<span class="apidocCodeKeywordSpan">send</span>(text);
+}
 
-module.exports = EphemeralSocket;
+/*
+ * Get a &#x22;child&#x22; client with a sub-prefix.
+ */
+StatsDClient.prototype.getChildClient = function (extraPrefix) {
+return new DatadogClient({
 ...</pre></li>
     </ul>
 
