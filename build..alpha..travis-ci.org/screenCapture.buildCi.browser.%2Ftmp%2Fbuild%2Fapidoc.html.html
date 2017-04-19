@@ -1,0 +1,1826 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/msiebuhr/node-statsd-client">statsd-client (v0.2.4)</a>
+</h1>
+<h4>Yet another client for Etsy's statsd</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client">module statsd-client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.statsd-client">
+            function <span class="apidocSignatureSpan"></span>statsd-client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>EphemeralSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>HttpSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>TCPSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.datadog_client">
+            function <span class="apidocSignatureSpan">statsd-client.</span>datadog_client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">statsd-client.</span>EphemeralSocket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">statsd-client.</span>HttpSocket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">statsd-client.</span>TCPSocket.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.EphemeralSocket">module statsd-client.EphemeralSocket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.EphemeralSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>EphemeralSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.EphemeralSocket.prototype">module statsd-client.EphemeralSocket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype._createSocket">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_createSocket
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype._enqueue">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_enqueue
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype._flushBuffer">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_flushBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype._send">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_send
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype._socketTimeout">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_socketTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype.close">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype.kill">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>kill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype.log">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>log
+            <span class="apidocSignatureSpan">(messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.EphemeralSocket.prototype.send">
+            function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>send
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.HttpSocket">module statsd-client.HttpSocket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.HttpSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>HttpSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.HttpSocket.prototype">module statsd-client.HttpSocket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype._enqueue">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_enqueue
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype._flushBuffer">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_flushBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype._send">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_send
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype._socketTimeout">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_socketTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype.close">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype.kill">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>kill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype.log">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>log
+            <span class="apidocSignatureSpan">(messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.HttpSocket.prototype.send">
+            function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>send
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.TCPSocket">module statsd-client.TCPSocket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.TCPSocket">
+            function <span class="apidocSignatureSpan">statsd-client.</span>TCPSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.TCPSocket.prototype">module statsd-client.TCPSocket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._createSocket">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_createSocket
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._enqueue">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_enqueue
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._flushBuffer">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_flushBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._send">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_send
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._socketTimeout">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_socketTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype._writeToSocket">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_writeToSocket
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype.close">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype.kill">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>kill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype.log">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>log
+            <span class="apidocSignatureSpan">(messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.TCPSocket.prototype.send">
+            function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>send
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.statsd-client.datadog_client">module statsd-client.datadog_client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.datadog_client.datadog_client">
+            function <span class="apidocSignatureSpan">statsd-client.</span>datadog_client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.datadog_client._sendMetric">
+            function <span class="apidocSignatureSpan">statsd-client.datadog_client.</span>_sendMetric
+            <span class="apidocSignatureSpan">(name, value, typeChar, sampleRate, tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.statsd-client.datadog_client.super_">
+            function <span class="apidocSignatureSpan">statsd-client.datadog_client.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client" id="apidoc.module.statsd-client">module statsd-client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.statsd-client" id="apidoc.element.statsd-client.statsd-client">
+        function <span class="apidocSignatureSpan"></span>statsd-client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StatsDClient(options) {
+    this.options = options || {};
+    this._helpers = undefined;
+
+    // Set defaults
+    this.options.prefix = this.options.prefix || "";
+
+    // Prefix?
+    if (this.options.prefix &amp;&amp; this.options.prefix !== "") {
+        // Add trailing dot if it's missing
+        var p = this.options.prefix;
+        this.options.prefix = p[p.length - 1] === '.' ? p : p + ".";
+    }
+
+    // Figure out which socket to use
+    if (this.options._socket) {
+        // Re-use given socket
+        this._socket = this.options._socket;
+    } else if(this.options.tcp) {
+        //User specifically wants a tcp socket
+        this._socket = new (require('./TCPSocket'))(this.options);
+    } else if (this.options.host &amp;&amp; this.options.host.match(/^http(s?):\/\//i)) {
+        // Starts with 'http://', then create a HTTP socket
+        this._socket = new (require('./HttpSocket'))(this.options);
+    } else {
+        // Fall back to a UDP ephemeral socket
+        this._socket = new (require('./EphemeralSocket'))(this.options);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket" id="apidoc.element.statsd-client.EphemeralSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>EphemeralSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EphemeralSocket(options) {
+    options = options || {};
+
+    this._hostname = options.host || 'localhost';
+    this._port = parseInt(options.port, 10) || 8125;
+    this._debug = options.debug || false;
+    this._socketTimeoutMsec = 'socketTimeout' in options ? options.socketTimeout : 1000;
+
+    // Check https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets for advisable sizes.
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 1200;
+
+    // Set up re-usable socket
+    this._socket = undefined; // Store the socket here
+    this._socketUsed = false; // Flag if it has been used
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket" id="apidoc.element.statsd-client.HttpSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>HttpSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpSocket(options) {
+    options = options || {};
+
+    this._requestOptions = urlParse(options.host || 'http://localhost/');
+    this._requestOptions.method = 'PUT';
+    this._requestOptions.headers = options.headers || {};
+    this._debug = options.debug || false;
+    this._socketTimeoutMsec = 'socketTimeout' in options ? options.socketTimeout : 1000;
+
+    // Require the correct HTTP library
+    if (this._requestOptions.protocol === 'https:') {
+        http = require('https');
+    }
+
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 10000;
+
+    // Set up re-usable socket
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket" id="apidoc.element.statsd-client.TCPSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>TCPSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TCPSocket(options) {
+    options = options || {};
+
+    this._hostname = options.host || 'localhost';
+    this._port = options.port || 8125;
+    this._debug = options.debug || false;
+    this._flushBufferTimeout = 'socketTimeout' in options ? options.socketTimeout : 1000;
+    this._timeoutsToClose = 'socketTimeoutsToClose' in options ? options.socketTimeoutsToClose : 10; // close socket if not used
+ in 10 flush intervals
+
+    // Check https://github.com/etsy/statsd/#multi-metric-packets for advisable sizes.
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 1200;
+
+    // Set up re-usable socket
+    this._socket = undefined; // Store the socket here
+    this._socketUsed = false; // Flag if it has been used
+    this._socketLastUsed = 0; // How many intervals of timeout since socket has been used
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.datadog_client" id="apidoc.element.statsd-client.datadog_client">
+        function <span class="apidocSignatureSpan">statsd-client.</span>datadog_client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DatadogClient(options) {
+    StatsDClient.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.EphemeralSocket" id="apidoc.module.statsd-client.EphemeralSocket">module statsd-client.EphemeralSocket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.EphemeralSocket" id="apidoc.element.statsd-client.EphemeralSocket.EphemeralSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>EphemeralSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EphemeralSocket(options) {
+    options = options || {};
+
+    this._hostname = options.host || 'localhost';
+    this._port = parseInt(options.port, 10) || 8125;
+    this._debug = options.debug || false;
+    this._socketTimeoutMsec = 'socketTimeout' in options ? options.socketTimeout : 1000;
+
+    // Check https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets for advisable sizes.
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 1200;
+
+    // Set up re-usable socket
+    this._socket = undefined; // Store the socket here
+    this._socketUsed = false; // Flag if it has been used
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.EphemeralSocket.prototype" id="apidoc.module.statsd-client.EphemeralSocket.prototype">module statsd-client.EphemeralSocket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype._createSocket" id="apidoc.element.statsd-client.EphemeralSocket.prototype._createSocket">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_createSocket
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _createSocket(callback) {
+    this.log("_createSocket()");
+    var that = this;
+    if (this._socket) {
+        return callback();
+    }
+
+    this._socket = dgram.createSocket('udp4');
+
+    // Listen on 'error'-events, so they don't bubble up to the main
+    // application. Try closing the socket for now, forcing it to be re-created
+    // later.
+    this._socket.once('error', this.kill.bind(this));
+
+    // Call on when the socket is ready.
+    this._socket.once('listening', function () {
+        return callback();
+    });
+    this._socket.bind({ port: 0, exclusive: true }, null);
+
+    // Start timer, if we have a positive timeout
+    if (this._socketTimeoutMsec &gt; 0 &amp;&amp; !this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._socketTimeoutMsec);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+EphemeralSocket.prototype._send = function _send(data) {
+    this.log("_send(", data, ")");
+    // If we don't have a socket, or we have created one but it isn't
+    // ready yet, we need to enqueue data to send once the socket is ready.
+    var that = this;
+
+    this.<span class="apidocCodeKeywordSpan">_createSocket</span>(function () {
+that._socketUsed = true;
+
+// Create message
+var message = new Buffer(data);
+
+if (that._debug) {
+    console.warn(message.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype._enqueue" id="apidoc.element.statsd-client.EphemeralSocket.prototype._enqueue">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_enqueue
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _enqueue(data) {
+    this.log("_enqueue(", data, ")");
+
+    if (!this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._socketTimeoutMsec);
+    }
+    // Empty buffer if it's too full
+    if (this._buffer.length + data.length &gt; this._maxBufferSize) {
+        this._flushBuffer();
+    }
+
+    if (this._buffer.length === 0) {
+        this._buffer = data;
+    } else {
+        this._buffer += "\n" + data;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send(data);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">_enqueue</span>(data);
+    }
+};
+
+/*
+ * Send data.
+ */
+EphemeralSocket.prototype._send = function _send(data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype._flushBuffer" id="apidoc.element.statsd-client.EphemeralSocket.prototype._flushBuffer">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_flushBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _flushBuffer() {
+    this.log("_flushBuffer() â†’", this._buffer);
+    this._send(this._buffer);
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.log("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this.<span class="apidocCodeKeywordSpan">_flushBuffer</span>();
+    return;
+}
+
+// Is it already closed? -- then stop here
+if (!this._socket) {
+    return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype._send" id="apidoc.element.statsd-client.EphemeralSocket.prototype._send">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_send
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _send(data) {
+    this.log("_send(", data, ")");
+    // If we don't have a socket, or we have created one but it isn't
+    // ready yet, we need to enqueue data to send once the socket is ready.
+    var that = this;
+
+    this._createSocket(function () {
+        that._socketUsed = true;
+
+        // Create message
+        var message = new Buffer(data);
+
+        if (that._debug) {
+            console.warn(message.toString());
+        }
+
+        that._socket.send(message, 0, message.length, that._port, that._hostname);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+    this._buffer += "\n" + data;
+}
+};
+
+EphemeralSocket.prototype._flushBuffer = function _flushBuffer() {
+this.log("_flushBuffer() â†’", this._buffer);
+this.<span class="apidocCodeKeywordSpan">_send</span>(this._buffer);
+this._buffer = "";
+};
+
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+this.log("send(", data, ")");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype._socketTimeout" id="apidoc.element.statsd-client.EphemeralSocket.prototype._socketTimeout">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>_socketTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _socketTimeout() {
+    this.log("close()");
+    // Flush the buffer, if it contain anything.
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+        return;
+    }
+
+    // Is it already closed? -- then stop here
+    if (!this._socket) {
+        return;
+    }
+
+    // Has been used? -- reset use-flag and wait some more
+    if (this._socketUsed) {
+        this._socketUsed = false;
+        return;
+    }
+
+    // Not used? -- close the socket
+    this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype.close" id="apidoc.element.statsd-client.EphemeralSocket.prototype.close">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+    this.log("close()");
+    if (!this._socket) {
+        return;
+    }
+
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+    }
+
+    // Cancel the running timer
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+
+    // Wait a tick or two, so any remaining stats can be sent.
+    setTimeout(this.kill.bind(this), 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	sdc = new SDC({host: 'statsd.example.com'});
+
+var timer = new Date();
+sdc.increment('some.counter'); // Increment by one.
+sdc.gauge('some.gauge', 10); // Set gauge to 10
+sdc.timing('some.timer', timer); // Calculates time diff
+
+sdc.<span class="apidocCodeKeywordSpan">close</span>(); // Optional - stop NOW
+```
+
+API
+---
+
+### Initialization
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype.kill" id="apidoc.element.statsd-client.EphemeralSocket.prototype.kill">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>kill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function kill() {
+    this.log("kill()");
+    if (!this._socket) {
+        return;
+    }
+
+    // Clear the timer and catch any further errors silently
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+    this._socket.on('error', function () {});
+
+    this._socket.close();
+    this._socket = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype.log" id="apidoc.element.statsd-client.EphemeralSocket.prototype.log">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>log
+        <span class="apidocSignatureSpan">(messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function log(messages) {
+    //console.log.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * is non-empty, it will be flushed. (And thusly, the socket is in use and we
+ * stop checking further right away).
+ *
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.<span class="apidocCodeKeywordSpan">log</span>("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this._flushBuffer();
+    return;
+}
+
+// Is it already closed? -- then stop here
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.EphemeralSocket.prototype.send" id="apidoc.element.statsd-client.EphemeralSocket.prototype.send">
+        function <span class="apidocSignatureSpan">statsd-client.EphemeralSocket.prototype.</span>send
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send(data);
+    } else {
+        this._enqueue(data);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // Create message
+        var message = new Buffer(data);
+
+        if (that._debug) {
+            console.warn(message.toString());
+        }
+
+        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
+    });
+};
+
+module.exports = EphemeralSocket;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.HttpSocket" id="apidoc.module.statsd-client.HttpSocket">module statsd-client.HttpSocket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.HttpSocket" id="apidoc.element.statsd-client.HttpSocket.HttpSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>HttpSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpSocket(options) {
+    options = options || {};
+
+    this._requestOptions = urlParse(options.host || 'http://localhost/');
+    this._requestOptions.method = 'PUT';
+    this._requestOptions.headers = options.headers || {};
+    this._debug = options.debug || false;
+    this._socketTimeoutMsec = 'socketTimeout' in options ? options.socketTimeout : 1000;
+
+    // Require the correct HTTP library
+    if (this._requestOptions.protocol === 'https:') {
+        http = require('https');
+    }
+
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 10000;
+
+    // Set up re-usable socket
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.HttpSocket.prototype" id="apidoc.module.statsd-client.HttpSocket.prototype">module statsd-client.HttpSocket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype._enqueue" id="apidoc.element.statsd-client.HttpSocket.prototype._enqueue">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_enqueue
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _enqueue(data) {
+    this.log("_enqueue(", data, ")");
+
+    if (!this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._socketTimeoutMsec);
+    }
+
+    // Empty buffer if it's too full
+    if (this._buffer.length + data.length &gt; this._maxBufferSize) {
+        this._flushBuffer();
+    }
+
+    if (this._buffer.length === 0) {
+        this._buffer = data;
+    } else {
+        this._buffer += "\n" + data;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send(data);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">_enqueue</span>(data);
+    }
+};
+
+/*
+ * Send data.
+ */
+EphemeralSocket.prototype._send = function _send(data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype._flushBuffer" id="apidoc.element.statsd-client.HttpSocket.prototype._flushBuffer">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_flushBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _flushBuffer() {
+    this.log("_flushBuffer() â†’", this._buffer);
+    this._send(this._buffer);
+    this._buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.log("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this.<span class="apidocCodeKeywordSpan">_flushBuffer</span>();
+    return;
+}
+
+// Is it already closed? -- then stop here
+if (!this._socket) {
+    return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype._send" id="apidoc.element.statsd-client.HttpSocket.prototype._send">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_send
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _send(data) {
+    this.log("_send(", data, ")");
+    var that = this;
+
+    var req = http.request(this._requestOptions);
+
+    // Catch but ignore errors
+    req.once('error', function () {});
+
+    // Send data
+    req.end(data);
+
+    if (that._debug) { console.warn(data); }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+    this._buffer += "\n" + data;
+}
+};
+
+EphemeralSocket.prototype._flushBuffer = function _flushBuffer() {
+this.log("_flushBuffer() â†’", this._buffer);
+this.<span class="apidocCodeKeywordSpan">_send</span>(this._buffer);
+this._buffer = "";
+};
+
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+this.log("send(", data, ")");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype._socketTimeout" id="apidoc.element.statsd-client.HttpSocket.prototype._socketTimeout">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>_socketTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _socketTimeout() {
+    this.log("_socketTimeout()");
+    // Flush the buffer, if it contain anything.
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+        return;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype.close" id="apidoc.element.statsd-client.HttpSocket.prototype.close">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+    this.log("close()");
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+    }
+
+    // Cancel the running timer
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+
+    // Wait a tick or two, so any remaining stats can be sent.
+    setTimeout(this.kill.bind(this), 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	sdc = new SDC({host: 'statsd.example.com'});
+
+var timer = new Date();
+sdc.increment('some.counter'); // Increment by one.
+sdc.gauge('some.gauge', 10); // Set gauge to 10
+sdc.timing('some.timer', timer); // Calculates time diff
+
+sdc.<span class="apidocCodeKeywordSpan">close</span>(); // Optional - stop NOW
+```
+
+API
+---
+
+### Initialization
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype.kill" id="apidoc.element.statsd-client.HttpSocket.prototype.kill">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>kill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function kill() {
+    this.log("kill()");
+
+    // Clear the timer and catch any further errors silently
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype.log" id="apidoc.element.statsd-client.HttpSocket.prototype.log">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>log
+        <span class="apidocSignatureSpan">(messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function log(messages) {
+    //console.log.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * is non-empty, it will be flushed. (And thusly, the socket is in use and we
+ * stop checking further right away).
+ *
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.<span class="apidocCodeKeywordSpan">log</span>("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this._flushBuffer();
+    return;
+}
+
+// Is it already closed? -- then stop here
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.HttpSocket.prototype.send" id="apidoc.element.statsd-client.HttpSocket.prototype.send">
+        function <span class="apidocSignatureSpan">statsd-client.HttpSocket.prototype.</span>send
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send(data);
+    } else {
+        this._enqueue(data);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // Create message
+        var message = new Buffer(data);
+
+        if (that._debug) {
+            console.warn(message.toString());
+        }
+
+        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
+    });
+};
+
+module.exports = EphemeralSocket;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.TCPSocket" id="apidoc.module.statsd-client.TCPSocket">module statsd-client.TCPSocket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.TCPSocket" id="apidoc.element.statsd-client.TCPSocket.TCPSocket">
+        function <span class="apidocSignatureSpan">statsd-client.</span>TCPSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TCPSocket(options) {
+    options = options || {};
+
+    this._hostname = options.host || 'localhost';
+    this._port = options.port || 8125;
+    this._debug = options.debug || false;
+    this._flushBufferTimeout = 'socketTimeout' in options ? options.socketTimeout : 1000;
+    this._timeoutsToClose = 'socketTimeoutsToClose' in options ? options.socketTimeoutsToClose : 10; // close socket if not used
+ in 10 flush intervals
+
+    // Check https://github.com/etsy/statsd/#multi-metric-packets for advisable sizes.
+    this._maxBufferSize = 'maxBufferSize' in options ? options.maxBufferSize : 1200;
+
+    // Set up re-usable socket
+    this._socket = undefined; // Store the socket here
+    this._socketUsed = false; // Flag if it has been used
+    this._socketLastUsed = 0; // How many intervals of timeout since socket has been used
+    this._socketTimer = undefined; // Reference to check-timer
+    this._buffer = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.TCPSocket.prototype" id="apidoc.module.statsd-client.TCPSocket.prototype">module statsd-client.TCPSocket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._createSocket" id="apidoc.element.statsd-client.TCPSocket.prototype._createSocket">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_createSocket
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _createSocket(callback) {
+    this.log("_createSocket()");
+    var that = this;
+    if (this._socket) {
+        return callback();
+    }
+
+    this._socket = net.Socket({
+        type: 'tcp4'
+    });
+
+
+    // Listen on 'error'-events, so they don't bubble up to the main
+    // application. Try closing the socket for now, forcing it to be re-created
+    // later.
+    this._socket.once('error', this.kill.bind(this));
+
+    // Call on when the socket is ready.
+    this._socket.connect(this._port, this._hostname, function() {
+        return callback();
+    });
+
+    // Start timer, if we have a positive timeout
+    if (this._flushBufferTimeout &gt; 0 &amp;&amp; !this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._flushBufferTimeout);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+EphemeralSocket.prototype._send = function _send(data) {
+    this.log("_send(", data, ")");
+    // If we don't have a socket, or we have created one but it isn't
+    // ready yet, we need to enqueue data to send once the socket is ready.
+    var that = this;
+
+    this.<span class="apidocCodeKeywordSpan">_createSocket</span>(function () {
+that._socketUsed = true;
+
+// Create message
+var message = new Buffer(data);
+
+if (that._debug) {
+    console.warn(message.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._enqueue" id="apidoc.element.statsd-client.TCPSocket.prototype._enqueue">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_enqueue
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _enqueue(data) {
+    this.log("_enqueue(", data, ")");
+
+    if (!this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._flushBufferTimeout);
+    }
+    // Empty buffer if it's too full
+    if (this._buffer.reduce(function(sum, line) { return sum + line.length; }, 0) &gt; this._maxBuferSize) {
+        this._flushBuffer();
+    }
+
+    this._buffer.push(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send(data);
+    } else {
+        this.<span class="apidocCodeKeywordSpan">_enqueue</span>(data);
+    }
+};
+
+/*
+ * Send data.
+ */
+EphemeralSocket.prototype._send = function _send(data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._flushBuffer" id="apidoc.element.statsd-client.TCPSocket.prototype._flushBuffer">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_flushBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _flushBuffer() {
+    this.log("_flushBuffer() â†’", this._buffer);
+    var that = this;
+    this._send(this._buffer, function() {
+        that._buffer = [];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.log("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this.<span class="apidocCodeKeywordSpan">_flushBuffer</span>();
+    return;
+}
+
+// Is it already closed? -- then stop here
+if (!this._socket) {
+    return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._send" id="apidoc.element.statsd-client.TCPSocket.prototype._send">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_send
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _send(data, callback) {
+    this.log("_send(", data, ")");
+    // If we don't have a socket, or we have created one but it isn't
+    // ready yet, we need to enqueue data to send once the socket is ready.
+    var that = this;
+
+    //Must be asynchronous
+    this._createSocket(that._writeToSocket.bind(that, data, callback));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+    this._buffer += "\n" + data;
+}
+};
+
+EphemeralSocket.prototype._flushBuffer = function _flushBuffer() {
+this.log("_flushBuffer() â†’", this._buffer);
+this.<span class="apidocCodeKeywordSpan">_send</span>(this._buffer);
+this._buffer = "";
+};
+
+/* Send data - public interface.
+ */
+EphemeralSocket.prototype.send = function send(data) {
+this.log("send(", data, ")");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._socketTimeout" id="apidoc.element.statsd-client.TCPSocket.prototype._socketTimeout">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_socketTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _socketTimeout() {
+    this.log("close()");
+    // Flush the buffer, if it contain anything.
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+        return;
+    }
+
+    // Is it already closed? -- then stop here
+    if (!this._socket) {
+        return;
+    }
+
+    // Not used?
+    if (this._socketUsed === false) {
+        this._socketLastUsed++;
+        // if not used in many intervals, close it
+        if (this._socketLastUsed &gt;= this._timeoutsToClose) {
+            this.close();
+            return;
+        }
+    } else {
+        this._socketLastUsed = 0;
+    }
+
+    // Reset whether its been used
+    this._socketUsed = false;
+    // Start timer, if we have a positive timeout
+    if (this._flushBufferTimeout &gt; 0 &amp;&amp; !this._socketTimer) {
+        this._socketTimer = setInterval(this._socketTimeout.bind(this), this._flushBufferTimeout);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype._writeToSocket" id="apidoc.element.statsd-client.TCPSocket.prototype._writeToSocket">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>_writeToSocket
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _writeToSocket(data, callback) {
+    // Create message
+    // Trailing \n important because socket.write will sometimes concat multiple 'write' calls.
+    var message = new Buffer(data.join('\n') + '\n');
+
+    if (this._debug) {
+        console.warn(message.toString());
+    }
+    if (this._socket) {
+        this._socketUsed = true;
+        this._socket.write(message);
+    }
+
+    callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype.close" id="apidoc.element.statsd-client.TCPSocket.prototype.close">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+    this.log("close()");
+    if (!this._socket) {
+        return;
+    }
+
+    if (this._buffer.length &gt; 0) {
+        this._flushBuffer();
+    }
+
+    // Cancel the running timer
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+
+    // Wait a tick or two, so any remaining stats can be sent.
+    setTimeout(this.kill.bind(this), 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	sdc = new SDC({host: 'statsd.example.com'});
+
+var timer = new Date();
+sdc.increment('some.counter'); // Increment by one.
+sdc.gauge('some.gauge', 10); // Set gauge to 10
+sdc.timing('some.timer', timer); // Calculates time diff
+
+sdc.<span class="apidocCodeKeywordSpan">close</span>(); // Optional - stop NOW
+```
+
+API
+---
+
+### Initialization
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype.kill" id="apidoc.element.statsd-client.TCPSocket.prototype.kill">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>kill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function kill() {
+    this.log("kill()");
+    if (!this._socket) {
+        return;
+    }
+
+    // Clear the timer and catch any further errors silently
+    if (this._socketTimer) {
+        clearInterval(this._socketTimer);
+        this._socketTimer = undefined;
+    }
+    this._socket.on('error', function () {});
+
+    this._socket.end();
+    this._socket = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype.log" id="apidoc.element.statsd-client.TCPSocket.prototype.log">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>log
+        <span class="apidocSignatureSpan">(messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function log(messages) {
+    //console.log.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * is non-empty, it will be flushed. (And thusly, the socket is in use and we
+ * stop checking further right away).
+ *
+ * If there is nothing in the buffer and the socket hasn't been used in the
+ * previous interval, close it.
+ */
+EphemeralSocket.prototype._socketTimeout = function _socketTimeout() {
+this.<span class="apidocCodeKeywordSpan">log</span>("close()");
+// Flush the buffer, if it contain anything.
+if (this._buffer.length &gt; 0) {
+    this._flushBuffer();
+    return;
+}
+
+// Is it already closed? -- then stop here
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.TCPSocket.prototype.send" id="apidoc.element.statsd-client.TCPSocket.prototype.send">
+        function <span class="apidocSignatureSpan">statsd-client.TCPSocket.prototype.</span>send
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function send(data) {
+    this.log("send(", data, ")");
+    if (this._maxBufferSize === 0) {
+        return this._send([data], function() {});
+    } else {
+        this._enqueue(data);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // Create message
+        var message = new Buffer(data);
+
+        if (that._debug) {
+            console.warn(message.toString());
+        }
+
+        that._socket.<span class="apidocCodeKeywordSpan">send</span>(message, 0, message.length, that._port, that._hostname);
+    });
+};
+
+module.exports = EphemeralSocket;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.statsd-client.datadog_client" id="apidoc.module.statsd-client.datadog_client">module statsd-client.datadog_client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.datadog_client.datadog_client" id="apidoc.element.statsd-client.datadog_client.datadog_client">
+        function <span class="apidocSignatureSpan">statsd-client.</span>datadog_client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DatadogClient(options) {
+    StatsDClient.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.datadog_client._sendMetric" id="apidoc.element.statsd-client.datadog_client._sendMetric">
+        function <span class="apidocSignatureSpan">statsd-client.datadog_client.</span>_sendMetric
+        <span class="apidocSignatureSpan">(name, value, typeChar, sampleRate, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_sendMetric = function (name, value, typeChar, sampleRate, tags) {
+    var text = this.options.prefix + name + ':' + value + '|' + typeChar;
+
+    var _sampleRate = sampleRate;
+    var _tags = tags;
+    if (arguments.length === 3) {
+        _tags = sampleRate;
+        _sampleRate = undefined;
+    }
+
+    if (_sampleRate) { text += '|@' + _sampleRate; }
+
+    if (_tags) {
+        text += '|#' + Object.keys(_tags).map(function (tag) {
+            return tag + ':' + _tags[tag];
+        }).join(',');
+    }
+
+    this._socket.send(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.statsd-client.datadog_client.super_" id="apidoc.element.statsd-client.datadog_client.super_">
+        function <span class="apidocSignatureSpan">statsd-client.datadog_client.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StatsDClient(options) {
+    this.options = options || {};
+    this._helpers = undefined;
+
+    // Set defaults
+    this.options.prefix = this.options.prefix || "";
+
+    // Prefix?
+    if (this.options.prefix &amp;&amp; this.options.prefix !== "") {
+        // Add trailing dot if it's missing
+        var p = this.options.prefix;
+        this.options.prefix = p[p.length - 1] === '.' ? p : p + ".";
+    }
+
+    // Figure out which socket to use
+    if (this.options._socket) {
+        // Re-use given socket
+        this._socket = this.options._socket;
+    } else if(this.options.tcp) {
+        //User specifically wants a tcp socket
+        this._socket = new (require('./TCPSocket'))(this.options);
+    } else if (this.options.host &amp;&amp; this.options.host.match(/^http(s?):\/\//i)) {
+        // Starts with 'http://', then create a HTTP socket
+        this._socket = new (require('./HttpSocket'))(this.options);
+    } else {
+        // Fall back to a UDP ephemeral socket
+        this._socket = new (require('./EphemeralSocket'))(this.options);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
